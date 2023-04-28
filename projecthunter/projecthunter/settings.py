@@ -57,7 +57,11 @@ ROOT_URLCONF = 'projecthunter.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'hunter/templates',
+            'enter/templates',
+            'forum/templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
