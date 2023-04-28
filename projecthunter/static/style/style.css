@@ -1,0 +1,54 @@
+:root{
+  --color_1: #4b587c;
+  --color_2: #3DA9FC;
+  --color_3: #d8eefe;
+}
+.selector-for-some-widget { 
+  box-sizing: content-box;
+}
+img{
+  width: 5em; 
+  height: 5em;
+}
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: 0.4rem 0;
+}
+footer{
+  background: var(--color_3);
+  height: 100px;
+}
+header{
+  border-bottom: 1px solid gray;
+}
+/*Вход*/
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/*Кнопка регистрации*/
+.div_button{
+  border-radius: 12px;
+  margin-top: 8px;
+  height: 55px;
+}
+.btn-primary{
+  background-color: var(--color_2);
+  border-color: var(--color_2);
+}
+.padding_elements{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.text_color{
+  color: var(--color_1);
+}
+.text_color:hover{
+  color: var(--color_2);
+}
