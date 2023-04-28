@@ -58,6 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            'projecthunter/templates'
             'hunter/templates',
             'enter/templates',
             'forum/templates',
