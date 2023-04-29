@@ -1,6 +1,36 @@
 label{
 	display: inline-block;
 }
+li select{
+	overflow: scroll;
+	overflow-x:hidden;
+}
+li select::-webkit-scrollbar{
+	background: rgba(0,0,0,0);
+	border-radius: 10px 10px;
+	width: 5px;
+	
+}
+li select::-webkit-scrollbar-thumb{
+	background: gray;
+}
+li{
+	list-style-type: none;
+}
+ul li{
+	list-style-type: disc;
+}
+input{
+	border: 0px;
+	box-shadow: inset 0px -2px 2px -2px rgba(0,0,0,0.5);
+	border-radius: 1px 1px;
+}
+input#id_avatar{
+	box-shadow: none;
+}
+.submit_button{
+	background: var(--color_2);
+}
 .scroll{
 	height: auto;
 }
@@ -96,7 +126,7 @@ label{
     word-break: break-all;
     margin-left: 5px;
 }
-.command ul{
+.command ul li{
 	list-style-type: none;
 }
 .forum_link{
@@ -105,36 +135,30 @@ label{
 .text_a{
 	font-size: 25px;
 }
-li select{
-	overflow: scroll;
-	overflow-x:hidden;
-}
-li select::-webkit-scrollbar{
-	background: rgba(0,0,0,0);
-	border-radius: 10px 10px;
-	width: 5px;
-	
-}
-li select::-webkit-scrollbar-thumb{
-	background: gray;
-}
-.submit_button{
-	background: var(--color_2);
-}
-li{
-	list-style-type: none;
-}
-ul li{
-	list-style-type: disc;
-}
+
 .nav-item{
 	list-style-type: none;
 }
-input{
-	border: 0px;
-	box-shadow: inset 0px -2px 2px -2px rgba(0,0,0,0.5);
-	border-radius: 1px 1px;
+
+.left{
+    transform: rotateZ(-90deg);
+    position: relative;
+    animation-name: left;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
-input#id_avatar{
-	box-shadow: none;
+
+.right{
+    transform: rotateZ(90deg);
+    position: relative;
+    animation-name: right;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.contacts a{
+    text-decoration: none;
+    height: 100px;
 }
