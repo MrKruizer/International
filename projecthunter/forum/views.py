@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
+from django.views.generic.edit import DeleteView
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views import generic
@@ -86,3 +87,13 @@ class Forum_List_View(generic.ListView):
 	context_object_name = 'themes'
 	paginate_by = 10
 	redirect_field_name = 'next'
+
+class Theme_Delete_View(DeleteView):
+    model = Theme
+    template_name = "delete_theme.html"
+    success_url = reverse_lazy('forum')
+
+class Post_Delete_View(DeleteView):
+    model = Post
+    template_name = "delete_post.html"
+    success_url = reverse_lazy('posts')

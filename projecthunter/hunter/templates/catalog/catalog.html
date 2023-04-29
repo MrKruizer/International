@@ -23,7 +23,7 @@
 				<img src="{{project.logo.url}}" alt="" class="avatar">
 			</div>
 			<div class="text col-6 ">
-				<h1>{{ project.get_author_username }}: <a href="">{{ project.name }}</a></h1>
+				<h1>{{ project.get_author_username }}: <a href="{% url 'project' pk=project.id %}">{{ project.name }}</a></h1>
 				<!-- 110 знаков максимум -->
 				<p>{{ project.description }}}</p>
 			</div>
