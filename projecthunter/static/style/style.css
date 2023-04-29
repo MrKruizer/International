@@ -31,7 +31,7 @@ img{
 }
 main{
   min-height: calc(100vh - 80px);
-  z-index: -1;
+  z-index: 5;
   position: relative;
 }
 /*Вход*/
@@ -59,4 +59,12 @@ main{
 }
 .text_color:hover{
   color: var(--color_2);
+}
+
+.left{
+	transform: rotateZ(-90deg);
+}
+
+.right{
+	transform: rotateZ(90deg);
 }
