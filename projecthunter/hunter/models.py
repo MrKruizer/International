@@ -49,6 +49,8 @@ class Project(models.Model):
 	uurl = models.UUIDField('Invite ref',default=uuid.uuid4,help_text='Unique identifier for the referral invitation to the team')
 	def __str__(self):
 		return self.name
+	def get_author_username(self):
+		return Profile.objects.get(projects=self.id).user.username
 	def reputation(self):
 		return len(Project_Reputation.objects.filter(project=self.id))
 	

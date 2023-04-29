@@ -30,3 +30,4 @@ class Profile_Update_View(UpdateView):
     model = Profile
     template_name = "update_profile.html"
     fields = ['avatar', 'bio', 'skills','roles','telegram','phone']
+

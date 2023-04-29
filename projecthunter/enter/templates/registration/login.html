@@ -1,10 +1,21 @@
 {% extends "base.html" %}
+{% load static %}
+{% block title %}
+Регистрация
+{% endblock title %}
+
+{% block localcss %}
+<link rel="stylesheet" href="{%static 'style/forum.css'%}">
+
+{% endblock localcss %}
 
 {% block content %}
+    
 
     {% if form.errors %}
         <p>Your login or password didn't match. Try again.</p>
     {% endif %}
+
 
     {% if next %}
         {% if user.is_authenticated %}
@@ -28,7 +39,7 @@
         </table>
         <input type="submit" value="login"/>
         <input type="hidden" name='next' value='{{next}}'>
-        <p><a href="{% url 'password_reset' %}">Lost password?</a>/<a href="{% url 'signup' %}">SignUp?</a></p>
+        <p><a href="{% url 'signup' %}">SignUp?</a></p>
 
     </form>
 
