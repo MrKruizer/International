@@ -31,7 +31,7 @@
         <!-- макет вопросов форума -->
         <div class="forum_ask shadow bg-info bg-gradient pos_rel">
             {% comment %} заголовок сообщения {% endcomment %}
-            
+
             <div class="d-flex justify-content-between align-items-center flex-wrap">
 
                 {% comment %} аватарка и ник {% endcomment %}
@@ -41,7 +41,7 @@
                 </div>
 
                 {% comment %} тема {% endcomment %}
-                <div class="d-flex justify-content-center align-items-center my-3 forum_meaaage_text col-12 col-lg text-truncate">
+                <div class="d-flex justify-content-center my-3 col-12 text-truncate">
                     <div class="text-truncate">Тема</div>
                 </div>
 
@@ -54,7 +54,7 @@
                     </button>
                     {% comment %} кнопка редактировать тему {% endcomment %}
                     <button type="button" class="btn btn-primary mx-2">
-                        <a href="{% url 'update_theme' theme=theme.id %}"><span class="material-symbols-outlined">edit</span></a>
+                        <a href="{% url 'update_theme' theme=theme.id %} "><span class="material-symbols-outlined">edit</span></a>
                     </button>
                     {% comment %} кнопка удалить тему {% endcomment %}
                     <button type="button" class="btn btn-danger mx-2">
@@ -85,4 +85,5 @@
     </section>
 </div>
 
+{% include "paginator.html" %}
 {% endblock content %}

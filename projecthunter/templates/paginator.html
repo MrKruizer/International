@@ -1,13 +1,24 @@
-<div class="d-flex justify-content-center align-items-center my-3">
-	<div class="btn-group">
-		<button class="btn btn-outline-primary d-flex justify-content-center align-items-center">
-			<span class="material-symbols-outlined left">expand_less</span>
-		</button>
-		<button class="btn border">
-			5{% comment %} Номер страницы {% endcomment %}
-		</button>
-		<button class="btn btn-outline-primary d-flex justify-content-center align-items-center">
-			<span class="material-symbols-outlined right">expand_less</span>
-		</button>
-	</div>
-</div>
+{% block pagination %}
+    {% if is_paginated %}
+        <div class="d-flex justify-content-center align-items-center my-3 pagination">
+        	<div class="btn-group">
+	            <span class="page-links">
+	                {% if page_obj.has_previous %}
+	                	<button class="btn btn-outline-primary d-flex justify-content-center align-items-center">
+	                		<a href="{{ request.path }}?page={{ page_obj.previous_page_number }}"><span class="material-symbols-outlined left">expand_less</span></a>
+						</button>
+	                {% endif %}
+	                <button class="btn border">
+	                	<span class="page-current">{% comment %} Номер страницы {% endcomment %}{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+					</button>
+	                {% if page_obj.has_next %}
+	                <button class="btn btn-outline-primary d-flex justify-content-center align-items-center">
+	                	<a href="{{ request.path }}?page={{ page_obj.next_page_number }}"><span class="material-symbols-outlined right">expand_less</span></a>
+	                </button>    
+	                {% endif %}
+	            </span>
+	        </div>
+        </div>
+    {% endif %}
+{% endblock pagination %}
+
