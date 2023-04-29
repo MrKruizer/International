@@ -8,5 +8,5 @@ from . import views
 
 urlpatterns = [
     path('', views.Project_List_View.as_view(), name='catalog'),
-    re_path(r'^project/(?P<pk>\d+)/', views.project, name='project'),
+    re_path(r'^project/', views.project, name='project'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

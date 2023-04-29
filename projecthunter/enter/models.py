@@ -5,7 +5,7 @@ class Profile(models.Model):
 	'''
 	Model represent user profile
 	'''
-	user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
+	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	bio = models.TextField(max_length=1000, blank=True)
 	skills = models.ManyToManyField(to='hunter.Skill')
 	roles = models.ManyToManyField(to='hunter.Role')

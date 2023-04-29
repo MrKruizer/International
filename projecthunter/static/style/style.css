@@ -10,7 +10,6 @@ label {
     display: block;
     font: 1rem 'Fira Sans', sans-serif;
 }
-
 input,
 label {
     margin: 0.4rem 0;
@@ -24,10 +23,14 @@ header{
   position: sticky;
   top: 0px;
   background: white;
+  z-index: 2;
+}
+body{
+  position: relative;
 }
 img{
-  width: 5em; 
-  height: 5em;
+    width: 80px;
+    height: 80px;
 }
 main{
   min-height: calc(100vh - 80px);
