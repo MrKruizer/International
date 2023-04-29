@@ -6,3 +6,9 @@ def signup(request):
 
 def signin(request):
 	return render(request, 'signin.html')
+
+def profile(request):
+	return render(request, 'profile.html')
+
+def update_profile(request):
+	return render(request, 'update_profile.html')
