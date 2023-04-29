@@ -7,8 +7,6 @@
 	margin-top: 3%;
 }
 .avatar{
-	width: 80px;
-	height: 80px;
 	align-self: center;
 }
 .div_avatar{
@@ -68,4 +66,23 @@
 }
 .cnt p{
 	margin-bottom: 0px;
+}
+.tags p{
+	word-wrap: break-word;
+    word-break: break-all;
+    padding: 4px;
+}
+
+.field {
+	border-radius: 5px;
+	background: #90b4ce;
+}
+.tag{
+	background: #90b4ce;
+	border-radius: 5px;
+	width: 100%;
+	margin: 2px;
+	padding-left: 4px;
+	padding-right: 10px;
+	border-radius: 7px;
 }

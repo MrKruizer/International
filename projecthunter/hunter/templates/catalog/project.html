@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}
+	Catalog
+{% endblock title %}
+{% block localcss %}
+	{% load static %}
+	<link rel="stylesheet" href="{% static "style/hunter.css" %}">
+{% endblock localcss %}
+{% block content %}
+<div class="container mt-5">
+	<div class="row">
+			<div class="logo col-2">
+				<p >Логотип:</p>
+				<img src="" alt="">
+			</div>
+			<div class="name col-3">
+					<p>Название:</p>
+					<div class="field text-center">
+						<p>InternationlTeam</p>
+					</div>
+			</div>
+			<div class="name col-7">
+				<div class="conteiner">
+					<div class="row">
+						<div class="col-6">
+						<p>Теги:</p>
+							<div class="tags">
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+							</div>
+						</div>
+						<div class="col-6">
+							<p>Необходимые навыки:</p>
+							<div class="tags">
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+								<span class="tag">Тэг</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+<div class="description">
+	<p>Описание:</p>
+	<div class="div_text">
+		<p>ОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписание</p>
+	</div>
+</div>
+
+{% endblock content  %}

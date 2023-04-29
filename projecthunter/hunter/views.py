@@ -7,8 +7,8 @@ from django.views import generic
 from .models import *
 from .forms import *
 
-def catalog(request):
-	return render(request, 'catalog/catalog.html')
+def project(request):
+	return render(request, 'catalog/project.html')
 
 class Project_List_View(generic.ListView):
 	model = Project
