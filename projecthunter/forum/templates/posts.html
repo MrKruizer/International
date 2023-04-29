@@ -1,14 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-Форум
+Посты
 {% endblock title %}
 
 {% block localcss %}
 {% comment %} <link rel="stylesheet" href="{%static 'style/style_forum.css'%}"> {% endcomment %}
 <link rel="stylesheet" href="{%static 'style/forum.css'%}">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<!-- Подключение Google icon -->
+
+<!-- знак удалить -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+<!-- редактировать -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 {% endblock localcss %}
 
@@ -18,17 +25,33 @@
 
 <div class="forum p-3">
 
-    <section class="forum_asks">
 
 
-        <!-- макет вопросов форума -->
-        <div class="forum_ask shadow bg-info bg-gradient pos_rel">
+    {% comment %} заголовок {% endcomment %}
+    <section class="forum_header d-flex justify-content-between align-items-center pb-3 bg-primary bg-gradient p-3 mb-3 shadow rounded">
+        <div class="forum_ask">
+            Вопрос <br>
+            {% comment %} кнопка менять тему {% endcomment %}
+            <a href="#" class="text-info">Изменить</a>
+        </div>
+        <div class="forum_user_profile">
+            <div class="form_message_author">Владелец запроса</div>
+            <img src="{%static 'image/profile.png'%}">
+        </div>
+    </section>
+
+
+    <section class="forum_messages">
+
+
+        <!-- макет сообщения -->
+        <div class="forum_message shadow bg-info bg-gradient">
             {% comment %} заголовок сообщения {% endcomment %}
             <header class="d-flex justify-content-between align-items-center px-3">
                 {% comment %} аватарка и ник {% endcomment %}
                 <div class="forum_user_profile">
                     <img src="{%static 'image/profile.png'%}">
-                    <div class="form_message_author">Владелец вопроса</div>
+                    <div class="form_message_author">Владелец Сообщения</div>
                 </div>
 
                 {% comment %} кнопки редактировать и удалить {% endcomment %}
@@ -46,21 +69,11 @@
 
             
             {% comment %} текст сообщения {% endcomment %}
-            <div class="forum_meaaage_text border pt-3 p-5">
-                <div class="mb-2 text-center">Тема</div>
+            <div class="forum_meaaage_text border p-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit aliquam consequatur officiis, et asperiores quasi, temporibus laudantium rem dolorem quo eum velit odit, repellendus praesentium officia non esse dicta. Delectus nesciunt alias dicta sapiente sint quibusdam magnam! Saepe doloremque quae unde itaque cupiditate maiores eaque facilis aperiam aliquam reprehenderit. Nam unde facilis iste cumque. Aspernatur nostrum odit eum cupiditate esse iste expedita eligendi mollitia labore rem! Quam sunt in ad atque, adipisci eum saepe itaque iusto voluptates ducimus dicta modi, vitae officiis repudiandae nulla excepturi libero non. Veritatis ea eaque, cupiditate cum corrupti obcaecati sunt reiciendis libero quia expedita velit vitae sed et quis laboriosam optio eligendi fugit dignissimos explicabo quaerat repellat quibusdam. Repellat, cumque facere dolore sint aut eligendi perspiciatis blanditiis numquam.
-                {% comment %} кнопка просмотра обсуждения темы {% endcomment %}
-                <div class="forum_meaaage_text p-3">
-                    <button type="button" class="btn btn-primary d-flex align-items-center float-end">
-                        Открыть
-                        <span class="material-symbols-outlined">left_panel_open</span>
-                    </button>
-                </div>
             </div>
-
         </div>
 
-        
     </section>
 </div>
 

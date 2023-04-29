@@ -1,0 +1,33 @@
+:root{
+    --forum_first_gradientcolor: transparent;
+    --forum_second_gradientcolor: #ccc;
+}
+
+.forum{
+    background-image: linear-gradient(var(--forum_first_gradientcolor, vor(--forum_second_gradientcolor)));
+}
+
+.pos_rel{
+    position: relative;
+}
+
+.forum_user_profile{
+    display: flex;
+    align-items: center;
+}
+
+.forum_ask a{
+    text-decoration: none;
+}
+
+.forum_messages > div:first-child, .forum_asks > div:first-child{
+    margin:0 0 3rem 0;
+}
+
+.forum_messages > div, .forum_asks > div{
+    margin: 3rem 0;
+}
+
+.forum_messages > div:last-child, .forum_asks > div:last-child{
+    margin: 3rem 0 0 0;
+}

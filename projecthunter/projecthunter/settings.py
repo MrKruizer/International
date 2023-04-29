@@ -125,7 +125,7 @@ STATICFILES_DIRS = [
     BASE_DIR/'static',
     BASE_DIR/'forum/static',
     BASE_DIR/'hunter/static',
-    BASE_DIR/'enter/static'
+    BASE_DIR/'enter/static',
     ]
 
 # Default primary key field type
