@@ -8,6 +8,7 @@ from django.views import generic
 from .models import *
 from .forms import *
 from hunter.models import Profile
+from django.views.generic.edit import DeleteView
 import datetime
 
 # Create your views here.
