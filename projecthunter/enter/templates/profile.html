@@ -12,78 +12,90 @@
 
 {% block content %}
 
-<header class="d-flex justify-content-around col-12 col-lg-4 m-3">
-    <div class="d-flex flex-column flex-wrap justify-content-start col-6 col-lg-10" style="height: 70px;">
-        <img src="{{profile.avatar.url}}">
-        <div class="ms-2">{{ profile.user.username }}</div>
-        <div>
-            <a class="btn btn-primary" href="#">Редактировать</a>
-        </div>
-    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 d-flex mt-3 name">  
+                <div class="col-lg-4 col-sm-8">
+                    <img src="{{profile.avatar.url}}">
+                </div>
 
-    <div class="col-6 col-lg-2">
-        <button class="btn border rounded"> 
-            <span class="material-symbols-outlined">expand_less</span><br>
-            <span>3.4</span>
-        </button>
-    </div>
-</header>
+                <div class="row">
+                    <div class="ms-2 col-12">
+                        <p class=" col-2">{{ profile.user.username }}</p>
+                        <a href="" class="ps-1 btn btn-primary col-10 pr-1">Редактировать</a>
+                    </div>
+                </div>
+                <div class="col-3 mt-2">                
+                    <button class="btn border rounded"> 
+                        <span class="material-symbols-outlined">expand_less</span><br>
+                        <span>3.4</span>
+                    </button>
+                </div>
+                <div class="col-6 mt-3">
+                </div>
+            </div>
+        </div> 
 
 <!-- о пользователе -->
-<div class="border rounded shadow m-4">
-    <br>
-    <br>
-    <br>
-</div>
+        <div class="row">
+            <div class="border rounded shadow mt-3">
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
 
 <!-- Навыки, роли, проекты -->
-<div class="d-flex justify-content-between flex-wrap mx-3">
-
-    <!-- Напвыки -->
-    <div class="col-12 col-lg-4 ">
-        <h2 class="mx-3">Навыки</h2>
-        <div class="rounded border shadow m-2 p-1">{% for skill in profile.skills.all %}
-            <span>{{skill}}</span>
-        {% endfor %}</div>
-    </div>
+    <!-- Навыки -->
+            <div class="row mt-3">
+                <div class="col-4">
+                    <h2 class="mx-3">Навыки</h2>
+                    <div class="rounded border shadow m-2 p-1">{% for skill in profile.skills.all %}
+                    <span>{{skill}}</span>
+                    {% endfor %}</div>
+                </div>
 
     <!-- роли -->
-    <div class="col-12 col-lg-4">
-        <h2 class="mx-3">Роли</h2>
-        <div class="rounded border shadow m-2 p-1">{% for role in profile.roles.all %}
-            <span>{{role}}</span>            
-        {% endfor %}</div>
-    </div>
+                <div class="col-4">
+                    <h2 class="mx-3">Роли</h2>
+                    <div class="rounded border shadow m-2 p-1">{% for role in profile.roles.all %}
+                        <span>{{role}}</span>            
+                    {% endfor %}</div>
+                </div>
 
     <!-- проекты -->
-    <div class="col-12 col-lg-4">
-        <h2 class="mx-3">Проекты</h2>
-        <div class="rounded border shadow m-2 p-1">{% for project in profile.projects.all %}
-            {{project.name}} 
-        {% endfor %}</div>
-    </div>
-</div>
+                <div class="col-4">
+                    <h2 class="mx-3">Проекты</h2>
+                    <div class="rounded border shadow m-2 p-1">{% for project in profile.projects.all %}
+                        {{project.name}} 
+                    {% endfor %}</div>
+                </div>
+            </div>
 
 <!-- контактная информация -->
-<div class="d-flex justify-content-between flex-wrap mx-3 p-2 contacts">
-    <div class="bg-primary p-2 rounded shadow"><a href="tel:+{{profile.phone}}" class="text-white">Номер телефона: +{{profile.phone}}</a></div>
-    <div><span class="material-symbols-outlined left">expand_less</span></div>
-    <div class="d-flex justify-content-center align-items-center"> <span class="center"> Контакты </span></div>
-    <div><span class="material-symbols-outlined right">expand_less</span></div>
-    <div class="bg-primary p-2 rounded shadow"><a href='{{profile.telegram}}' class="text-white">Телеграмм: {{profile.telegram}}</a></div>
-</div>
+    <div class="row">
+        <div class="d-flex justify-content-between flex-wrap mx-3 p-2 contacts">
+            <div class="bg-primary p-2 rounded shadow"><a href="tel:+{{profile.phone}}" class="text-white">Номер телефона: +
+            {{profile.phone}}</a></div>
+            <div><span class="material-symbols-outlined left">expand_less</span></div>
+            <div class="d-flex justify-content-center align-items-center"> <span class="center"> Контакты </span></div>
+            <div><span class="material-symbols-outlined right">expand_less</span></div>
+            <div class="bg-primary p-2 rounded shadow"><a href='{{profile.telegram}}' class="text-white">Телеграмм: 
+            {{profile.telegram}}</a></div>
+        </div>
 
-<!-- ссылки на проекты -->
-<div>
-    <h2 class="mx-3">Ссылки на проекты</h2>
-    <ul>
-        {% for project in profile.projects.all %}
-        
-        <li>
-            <strong>projectName</strong> - <span><a href="{% url 'project' pk=project.id %}">{{project.name}}</a></span>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+        <!-- ссылки на проекты -->
+        <div>
+            <h2 class="mx-3">Ссылки на проекты</h2>
+            <ul>
+                {% for project in profile.projects.all %}
+                
+                <li>
+                    <strong>projectName</strong> - <span><a href="{% url 'project' pk=project.id %}">{{project.name}}</a></span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+</div>  
 
 {% endblock content %}

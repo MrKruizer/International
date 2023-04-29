@@ -19,21 +19,6 @@
 .contacts a{
     text-decoration: none;
 }
-
-@keyframes left {
-    from{
-        right: 0;
-    }
-    to{
-        right: 10px;
-    }
-}
-
-@keyframes right {
-    from{
-        left: 0;
-    }
-    to{
-        left: 10px;
-    }
+.pr-1{
+    padding-right: 20px;
 }
