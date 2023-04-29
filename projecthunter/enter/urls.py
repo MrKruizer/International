@@ -7,5 +7,9 @@ from . import views
 urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     re_path(r'^signup/$', views.signup, name='signup'),
-    #re_path(r'^signin/$', views.signin, name='signin')
+    re_path(r'^signup/$', views.signin, name='signup'),
+    re_path(r'^signin/$', views.signup, name='signin'),
+    re_path(r'^profile/$', views.profile, name='profile'),
+    re_path(r'^update_profile/$', views.update_profile, name='update_profile'),
+    path('', include('django.contrib.auth.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

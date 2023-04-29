@@ -1,0 +1,39 @@
+.left{
+    transform: rotateZ(-90deg);
+    position: relative;
+    animation-name: left;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.right{
+    transform: rotateZ(90deg);
+    position: relative;
+    animation-name: right;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.contacts a{
+    text-decoration: none;
+}
+
+@keyframes left {
+    from{
+        right: 0;
+    }
+    to{
+        right: 10px;
+    }
+}
+
+@keyframes right {
+    from{
+        left: 0;
+    }
+    to{
+        left: 10px;
+    }
+}

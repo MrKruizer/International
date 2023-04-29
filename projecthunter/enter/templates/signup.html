@@ -5,18 +5,17 @@
 {% endblock title %}
 
 {% block localcss %}
-<link rel="stylesheet" href="{%static 'style/forum.css'%}">
+<link rel="stylesheet" href="{%static 'style/enter.css'%}">
 
 {% endblock localcss %}
 
 {% block content %}
 
-<h1 class="text-center">Авторизация</h1>
-    
+<h1 class="text-center">Регистрация</h1>
+
 <form class="was-validated w-50 m-auto">
 	{% csrf_token %}
 
-		
     <div class="form-floating mb-3 mt-3">
         {{ form_u.as_p }}
 		{{ form_p.as_p}}

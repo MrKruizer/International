@@ -12,7 +12,6 @@ def signup(request):
 		user.save()
 		username=request.POST.get('username')
 		uuser = User.objects.get(username=username)
-
 		profile = Profile(user_id = uuser.id, bio=request.POST['bio'],avatar=request.POST['avatar'])
 		profile.save()
 		profile.skills.set(request.POST['skills'])
@@ -23,3 +22,11 @@ def signup(request):
 	form_p = Profile_Form()
 	return render(request, 'signup.html', context={'form_u': form_u, 'form_p':form_p})
 	
+def signin(request):
+	return render(request, 'signin.html')
+
+def profile(request):
+	return render(request, 'profile.html')
+
+def update_profile(request):
+	return render(request, 'update_profile.html')
