@@ -27,16 +27,16 @@
 
     <section class="forum_asks contain-fluid">
 
-
-        <!-- макет вопросов форума -->
-        <div class="forum_ask bg-info bg-gradient">
+        {% for theme in themes %}
+            <!-- макет вопросов форума -->
+        <div class="forum_ask shadow bg-info bg-gradient pos_rel">
             {% comment %} заголовок сообщения {% endcomment %}
             <header class="d-flex justify-content-between align-items-center flex-wrap">
 
                 {% comment %} аватарка и ник {% endcomment %}
-                <div class="d-flex justify-content-center align-items-center my-3 col-12 col-lg">
-                    <img src="{%static 'image/profile.png'%}">
-                    <div class="form_message_author">Владелец вопроса</div>
+                <div class="forum_user_profile">
+                    <img src="{{theme.author.avatar.url}}">
+                    <div class="form_message_author">{{ theme.author.user.username }}</div>
                 </div>
 
                 {% comment %} тема {% endcomment %}
@@ -62,7 +62,22 @@
                 </div>
             </header>
 
+            
+            {% comment %} текст сообщения {% endcomment %}
+            <div class="forum_meaaage_text border pt-3 p-5">
+                <div class="mb-2 text-center">{{theme.name}}</div>
+                {% comment %} кнопка просмотра обсуждения темы {% endcomment %}
+                <div class="forum_meaaage_text p-3">
+                    <button type="button" class="btn btn-primary d-flex align-items-center float-end">
+                        Открыть
+                        <span class="material-symbols-outlined">left_panel_open</span>
+                    </button>
+                </div>
+            </div>
+
         </div>
+        {% endfor %}
+        
 
         
     </section>

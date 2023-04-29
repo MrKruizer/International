@@ -9,7 +9,7 @@
 {% block content %}
 <div class="container scroll">
 	<div class="row justify-content-center mt-2">
-		<div class="filter btn btn-primary col-lg-1 col-md-2 col-sm-5 mr-1">
+		<div class="filter btn col-lg-1 col-md-2 col-sm-5 mr-1">
 			Фильтр
 		</div>
 		<div class="add_projects btn btn-primary col-lg-2 col-md-3 col-sm-6 m-0">
@@ -19,7 +19,7 @@
 	{% for project in project_list %}
 		<div class="card row">
 			<div class="div_avatar col-3 login">
-				<img src="{% static "image/cv.png" %}" alt="" class="avatar">
+				<img src="{{project.logo.url}}" alt="" class="avatar">
 			</div>
 			<div class="text col-6 ">
 				<h1>{{ project.author }}: {{ project.name }}</h1>
@@ -28,10 +28,8 @@
 			</div>
 			<div class="rating col-2">
 				<button class="rating_button"> 
-					<img src="{% static "image/triangle.png" %}" alt="" class="triangle">
-					<p class="cnt position-absolute">123</p>
+						<img src="{% static "image/triangle.png" %}" alt="" class="triangle">
 				</button>
-
 			</div>
 		</div>
 	{% endfor %}
