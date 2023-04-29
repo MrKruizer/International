@@ -96,7 +96,7 @@ label{
     word-break: break-all;
     margin-left: 5px;
 }
-.command ul{
+.command ul li{
 	list-style-type: none;
 }
 .forum_link{
