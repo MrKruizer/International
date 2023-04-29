@@ -13,6 +13,7 @@ def project(request, pk):
 
 
 
+
 class Project_List_View(generic.ListView):
 	model = Project
 	context_object_name = 'project_list'

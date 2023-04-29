@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+{% block title %}
+	Project create
+{% endblock title %}
+{% block localcss %}
+	{% load static %}
+	<link rel="stylesheet" href="{% static "style/hunter.css" %}">
+{% endblock localcss %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="tab_tags col-7 mt-3">
+			<form action="" method="post">
+			<li>
+
+
+	    	<label for="id_username">Username:</label>
+    <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username" class="input">
+    <br>
+      <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+    
+    
+  </li>
+
+
+
+  
+  <li>
+
+
+    <label for="id_password1">Password:</label>
+    <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1" class="input">
+    
+      <span class="helptext"></span></li>
+
+      <ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul>
+    
+    
+  <li>
+
+  </li>
+
+
+
+  
+  <li>
+
+
+    <label for="id_password2">Password confirmation:</label>
+    <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2" class="input">
+    
+      <span class="helptext">Enter the same password as before, for verification.</span>
+    
+    
+      
+    
+  </li>
+
+
+		<li>
+
+
+    <label for="id_bio">Bio:</label>
+    <textarea name="bio" cols="40" rows="10" maxlength="1000" id="id_bio"></textarea>
+    
+    
+  </li>
+
+
+
+  
+  <li>
+
+
+    <label for="id_avatar">Avatar:</label>
+    <input type="file" name="avatar" accept="image/*" id="id_avatar">
+    
+    
+  </li>
+
+
+
+  
+  <li>
+
+
+    <label for="id_skills">Skills:</label>
+    <select name="skills" required="" id="id_skills" multiple="" class=" overflow">
+  <option value="1">C#</option>
+
+  <option value="2">Java</option>
+
+  <option value="3">HTML</option>
+
+  <option value="4">CSS</option>
+
+  <option value="5">JS</option>
+
+  <option value="6">Django</option>
+
+  <option value="7">Python</option>
+
+  <option value="8">Keras</option>
+
+  <option value="9">Linux</option>
+
+  <option value="10">GitLab</option>
+
+  <option value="11">Docker</option>
+
+  <option value="12">SQL</option>
+
+  <option value="13">PostgresSQL</option>
+
+  <option value="14">MySQL</option>
+
+  <option value="15">Go</option>
+
+  <option value="16">Kotlin</option>
+
+</select>
+    
+    
+  </li>
+
+
+
+  
+  <li>
+
+
+    <label for="id_roles">Roles:</label>
+    <select name="roles" required="" id="id_roles" multiple="" class="overflow">
+  <option value="1">Backender j</option>
+
+  <option value="2">Backender m</option>
+
+  <option value="4">Backender s</option>
+
+  <option value="5">Backender l</option>
+
+  <option value="6">frontender j</option>
+
+  <option value="7">frontender m</option>
+
+  <option value="9">frontender s</option>
+
+  <option value="10">frontender l</option>
+
+  <option value="11">ML j</option>
+
+  <option value="12">ML m</option>
+
+  <option value="13">ML s</option>
+
+  <option value="14">ML l</option>
+
+  <option value="15">DevOps j</option>
+
+  <option value="16">DevOps m</option>
+
+  <option value="17">DevOps s</option>
+
+  <option value="18">DevOps l</option>
+
+  <option value="19">Mobile s</option>
+
+  <option value="20">Mobile m</option>
+
+  <option value="21">Mobile j</option>
+
+  <option value="22">Mobile l</option>
+
+</select>
+    
+    
+  </li>
+
+
+
+  
+  <li>
+
+
+    <label for="id_phone">Phone:</label>
+    <input type="text" name="phone" maxlength="12" id="id_phone">
+    
+    
+  </li>
+
+
+
+  
+  <li>
+
+
+    <label for="id_telegram">Telegram:</label>
+    <input type="url" name="telegram" maxlength="200" id="id_telegram">
+    
+    
+      
+    
+  </li>
+
+
+		<input type="submit" value="Submit" class="btn btn_primary submit_button">
+	</form>
+		</div>
+	</div>
+</div>
+{% endblock content%}

@@ -21,6 +21,9 @@ footer{
 }
 header{
   border-bottom: 1px solid gray;
+  position: sticky;
+  top: 0px;
+  background: white;
 }
 img{
   width: 5em; 
@@ -28,6 +31,8 @@ img{
 }
 main{
   min-height: calc(100vh - 80px);
+  z-index: -1;
+  position: relative;
 }
 /*Вход*/
 .login{
