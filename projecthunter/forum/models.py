@@ -7,7 +7,7 @@ class Post(models.Model):
 	date = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
-		pass
+		return f'{self.theme.name}: {self.author}'
 	
 class Theme(models.Model):
     """
@@ -15,3 +15,5 @@ class Theme(models.Model):
     """
     name = models.CharField(max_length=254)
     author = models.ForeignKey('hunter.Project',on_delete=models.CASCADE)
+    def __str__(self):
+    	return f'{self.name}: {self.author}'
