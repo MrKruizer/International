@@ -6,6 +6,11 @@
 .selector-for-some-widget { 
   box-sizing: content-box;
 }
+
+body{
+  position: relative;
+}
+
 label {
     display: block;
     font: 1rem 'Fira Sans', sans-serif;
@@ -25,14 +30,16 @@ header{
   top: 0px;
   background: white;
 }
+
+header, footer{
+  z-index: 1;
+}
 img{
   width: 5em; 
   height: 5em;
 }
 main{
   min-height: calc(100vh - 80px);
-  z-index: 5;
-  position: relative;
 }
 /*Вход*/
 .login{
