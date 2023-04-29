@@ -10,7 +10,7 @@ class Profile(models.Model):
 	skills = models.ManyToManyField(to='hunter.Skill')
 	roles = models.ManyToManyField(to='hunter.Role')
 	projects = models.ManyToManyField(to='hunter.Project', blank=True)
-	avatar = models.ImageField(upload_to='static/images',height_field=None, width_field=None, max_length=100, default='static/images/profile.png')
+	avatar = models.ImageField(upload_to='static/images',height_field=None, width_field=None, max_length=100, default='static/image/profile.png')
 	telegram = models.URLField(blank=True);
 	phone = models.CharField(max_length=12,blank=True)
 
