@@ -30,12 +30,12 @@
     {% comment %} заголовок {% endcomment %}
     <section class="forum_header d-flex justify-content-between align-items-center pb-3 bg-primary bg-gradient p-3 mb-3 shadow rounded">
         <div class="forum_ask">
-            Вопрос <br>
+            {{theme}} <br>
             {% comment %} кнопка менять тему {% endcomment %}
-            <a href="#" class="text-info">Изменить</a>
+            <a href="{% url 'update_theme' theme=theme_id %}" class="text-info">Изменить</a>
         </div>
         <div class="forum_user_profile">
-            <div class="form_message_author">Владелец запроса</div>
+            <div class="form_message_author"> {{theme_author}} </div>
             <img src="{%static 'image/profile.png'%}">
         </div>
     </section>
@@ -43,36 +43,38 @@
 
     <section class="forum_messages">
 
-
-        <!-- макет сообщения -->
-        <div class="forum_message shadow bg-info bg-gradient">
+        {% for post in posts %}
+            <!-- макет сообщения -->
+            <div class="forum_message shadow bg-info bg-gradient">
             {% comment %} заголовок сообщения {% endcomment %}
-            <header class="d-flex justify-content-between align-items-center px-3">
-                {% comment %} аватарка и ник {% endcomment %}
-                <div class="forum_user_profile">
-                    <img src="{%static 'image/profile.png'%}">
-                    <div class="form_message_author">Владелец Сообщения</div>
-                </div>
+                <header class="d-flex justify-content-between align-items-center px-3">
+                    {% comment %} аватарка и ник {% endcomment %}
+                    <div class="forum_user_profile">
+                        <img src="{{ post.author.avatar.url }}">
+                        <div class="form_message_author"> {{post.author.user.username}} </div>
+                    </div>
 
-                {% comment %} кнопки редактировать и удалить {% endcomment %}
-                <div>
-                    {% comment %} кнопка редактировать пост {% endcomment %}
-                    <button type="button" class="btn btn-primary">
-                        <span class="material-symbols-outlined">edit</span>
-                    </button>
-                    {% comment %} кнопка удалить пост {% endcomment %}
-                    <button type="button" class="btn btn-danger">
-                        <span class="material-symbols-outlined">delete</span>
-                    </button>
-                </div>
-            </header>
+                    {% comment %} кнопки редактировать и удалить {% endcomment %}
+                    <div>
+                        {% comment %} кнопка редактировать пост {% endcomment %}
+                        <button type="button" class="btn btn-primary">
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                        {% comment %} кнопка удалить пост {% endcomment %}
+                        <button type="button" class="btn btn-danger">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                    </div>
+                </header>
 
-            
-            {% comment %} текст сообщения {% endcomment %}
-            <div class="forum_meaaage_text border p-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit aliquam consequatur officiis, et asperiores quasi, temporibus laudantium rem dolorem quo eum velit odit, repellendus praesentium officia non esse dicta. Delectus nesciunt alias dicta sapiente sint quibusdam magnam! Saepe doloremque quae unde itaque cupiditate maiores eaque facilis aperiam aliquam reprehenderit. Nam unde facilis iste cumque. Aspernatur nostrum odit eum cupiditate esse iste expedita eligendi mollitia labore rem! Quam sunt in ad atque, adipisci eum saepe itaque iusto voluptates ducimus dicta modi, vitae officiis repudiandae nulla excepturi libero non. Veritatis ea eaque, cupiditate cum corrupti obcaecati sunt reiciendis libero quia expedita velit vitae sed et quis laboriosam optio eligendi fugit dignissimos explicabo quaerat repellat quibusdam. Repellat, cumque facere dolore sint aut eligendi perspiciatis blanditiis numquam.
+                
+                {% comment %} текст сообщения {% endcomment %}
+                <div class="forum_meaaage_text border p-5">
+                    {{post.text}}
+                </div>
             </div>
-        </div>
+        {% endfor %}
+        
 
     </section>
 </div>

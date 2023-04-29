@@ -14,6 +14,6 @@ class Theme(models.Model):
     Model representation forum themes
     """
     name = models.CharField(max_length=254)
-    author = models.ForeignKey('hunter.Project',on_delete=models.CASCADE)
+    author = models.ForeignKey('enter.Profile',on_delete=models.CASCADE)
     def __str__(self):
     	return f'{self.name}: {self.author}'

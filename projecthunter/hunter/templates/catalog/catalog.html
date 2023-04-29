@@ -19,7 +19,7 @@
 	{% for project in project_list %}
 		<div class="card row">
 			<div class="div_avatar col-3 login">
-				<img src="{% static "image/cv.png" %}" alt="" class="avatar">
+				<img src="{{project.logo.url}}" alt="" class="avatar">
 			</div>
 			<div class="text col-6 ">
 				<h1>{{ project.author }}: {{ project.name }}</h1>
@@ -28,10 +28,8 @@
 			</div>
 			<div class="rating col-2">
 				<button class="rating_button"> 
-					<img src="{% static "image/triangle.png" %}" alt="" class="triangle">
-					<p class="cnt position-absolute">123</p>
+						<img src="{% static "image/triangle.png" %}" alt="" class="triangle">
 				</button>
-
 			</div>
 		</div>
 	{% endfor %}

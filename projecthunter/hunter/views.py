@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User 
 from django.urls import reverse_lazy
 from django.views import generic
 from .models import *
@@ -9,6 +10,8 @@ from .forms import *
 
 def project(request):
 	return render(request, 'catalog/project.html')
+
+
 
 class Project_List_View(generic.ListView):
 	model = Project
@@ -19,7 +22,9 @@ class Project_List_View(generic.ListView):
 	def get_queryset(self):
 		if self.request.method == 'GET':
 			if 'tag' in self.request.GET.keys():
-				tag = Tag.objects.get(name=self.request.GET['tag'])
-				return Project.objects.filter(tag=tag)
+				try:
+					tag = Tag.objects.get(name=self.request.GET['tag'])
+				except:
+					return Project.objects.all()
+				return Project.objects.filter(tags=tag)
 		return Project.objects.all()
-
