@@ -9,7 +9,7 @@ from .models import *
 from .forms import *
 
 def project(request):
-	return render(request, 'catalog/project.html')
+	return render(request, 'catalog/project_create.html')
 
 
 
