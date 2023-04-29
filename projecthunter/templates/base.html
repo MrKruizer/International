@@ -40,7 +40,7 @@
 				{% if user.is_authenticated %}
 					<a href=""><img src="{% static "image/profile.png" %}" alt=""></a>
 				{% else %}
-					<a href="{% url 'signin' %}" class="btn login text_color">
+					<a href="{% url 'login' %}" class="btn login text_color">
 							Войти
 					</a>
 					<a href="{% url 'signup' %}" class="div_button btn btn-primary login">
