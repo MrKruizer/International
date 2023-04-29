@@ -13,9 +13,12 @@
 {% block content %}
 
 <header class="d-flex justify-content-around col-12 col-lg-4 m-3">
-    <div class="d-flex justify-content-start col-6 col-lg-10">
+    <div class="d-flex flex-column flex-wrap justify-content-start col-6 col-lg-10" style="height: 70px;">
         <img src="{{profile.avatar.url}}">
         <div class="ms-2">{{ profile.user.username }}</div>
+        <div>
+            <a class="btn btn-primary" href="#">Редактировать</a>
+        </div>
     </div>
 
     <div class="col-6 col-lg-2">
