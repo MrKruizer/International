@@ -22,9 +22,12 @@ footer{
 header{
   border-bottom: 1px solid gray;
 }
-.logo img{
+img{
   width: 5em; 
   height: 5em;
+}
+main{
+  min-height: calc(100vh - 80px);
 }
 /*Вход*/
 .login{
