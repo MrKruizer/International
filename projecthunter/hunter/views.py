@@ -8,7 +8,7 @@ from django.views import generic
 from .models import *
 from .forms import *
 
-def project(request):
+def project(request, pk):
 	return render(request, 'catalog/project.html')
 
 

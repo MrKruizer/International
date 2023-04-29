@@ -21,12 +21,9 @@ def signup(request):
 	form_u = User_Form()
 	form_p = Profile_Form()
 	return render(request, 'signup.html', context={'form_u': form_u, 'form_p':form_p})
-	
-def signin(request):
-	return render(request, 'signin.html')
 
-def profile(request):
-	return render(request, 'profile.html')
+def profile(request, pk):
+	return render(request, 'profile.html', context={'profile': Profile.objects.get(id=pk)})
 
 def update_profile(request):
 	return render(request, 'update_profile.html')
