@@ -44,7 +44,7 @@ class Project(models.Model):
 	Model representing the project
 	"""
 	name = models.CharField(max_length=254)
-	logo = models.ImageField(upload_to='static/images',height_field=None, width_field=None, max_length=100)
+	logo = models.ImageField(upload_to='static/images',height_field=None, width_field=None, max_length=100, default='static/image/cv.png')
 	tags = models.ManyToManyField(Tag,blank=True)
 	skills = models.ManyToManyField(Skill, blank=True)
 	description = models.TextField(blank=True, max_length=1000)
