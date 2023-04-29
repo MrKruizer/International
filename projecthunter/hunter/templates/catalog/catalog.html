@@ -11,7 +11,7 @@
 	{% for project in project_list %}
 		<div class="card row">
 			<div class="div_avatar col-3 login">
-				<img src="{% static "image/cv.png" %}" alt="" class="avatar">
+				<img src="{{project.logo.url}}" alt="" class="avatar">
 			</div>
 			<div class="text col-6 ">
 				<h1>{{ project.author }}: {{ project.name }}</h1>
