@@ -71,14 +71,34 @@
 
 .field {
 	border-radius: 5px;
-	background: #90b4ce;
+	border: 1px solid #90b4ce;
+
 }
 .tag{
-	background: #90b4ce;
 	border-radius: 5px;
 	width: 100%;
 	margin: 2px;
 	padding-left: 4px;
 	padding-right: 10px;
 	border-radius: 7px;
+	border: 1px solid #90b4ce;
+	transition: 0.5s;
+}
+.tag:hover{
+	background:#90b4ce;
+	cursor: pointer;
+}
+.field p{
+	word-wrap: break-word;
+    word-break: break-all;
+    margin-left: 5px;
+}
+.command ul{
+	list-style-type: none;
+}
+.forum_link{
+	background: #90b4ce;
+}
+.text_a{
+	font-size: 25px;
 }
