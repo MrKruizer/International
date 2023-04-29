@@ -36,9 +36,6 @@ class Project_Reputation(models.Model):
 	source = models.ForeignKey('enter.Profile', on_delete=models.CASCADE)
 	project = models.ForeignKey('Project', on_delete=models.CASCADE)
 
-	def __str__(self):
-		pass
-
 class Project(models.Model):
 	"""
 	Model representing the project
@@ -50,9 +47,10 @@ class Project(models.Model):
 	description = models.TextField(blank=True, max_length=1000)
 	git = models.URLField(max_length = 254, blank=True)
 	uurl = models.UUIDField('Invite ref',default=uuid.uuid4,help_text='Unique identifier for the referral invitation to the team')
-
 	def __str__(self):
 		return self.name
+	def reputation(self):
+		return len(Project_Reputation.objects.filter(project=self.id))
 	
 class Team(models.Model):
 	project = models.ForeignKey('Project', on_delete=models.CASCADE)
@@ -60,4 +58,4 @@ class Team(models.Model):
 	profile = models.ForeignKey('enter.Profile', on_delete=models.CASCADE)
 
 	def __str__(self):
-		pass
+		return f'teams {self.project.name}'

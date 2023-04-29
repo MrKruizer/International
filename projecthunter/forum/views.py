@@ -72,10 +72,17 @@ class Posts_List_View(generic.ListView):
 	def get_queryset(self):
 		return Post.objects.filter(theme_id = self.kwargs['theme'])
 
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		theme = Theme.objects.get(id = context['posts'][0].theme.id)
+		context["theme"] = theme.name
+		context["theme_id"] = theme.id
+		context["theme_author"] = theme.author.user.username 
+		return context
 
 class Forum_List_View(generic.ListView):
 	model = Theme
 	template_name = 'forum.html'
-	context_object_name = 'Themes'
+	context_object_name = 'themes'
 	paginate_by = 10
 	redirect_field_name = 'next'

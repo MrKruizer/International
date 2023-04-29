@@ -20,15 +20,15 @@
 
     <section class="forum_asks">
 
-
-        <!-- макет вопросов форума -->
+        {% for theme in themes %}
+            <!-- макет вопросов форума -->
         <div class="forum_ask shadow bg-info bg-gradient pos_rel">
             {% comment %} заголовок сообщения {% endcomment %}
             <header class="d-flex justify-content-between align-items-center px-3">
                 {% comment %} аватарка и ник {% endcomment %}
                 <div class="forum_user_profile">
-                    <img src="{%static 'image/profile.png'%}">
-                    <div class="form_message_author">Владелец вопроса</div>
+                    <img src="{{theme.author.avatar.url}}">
+                    <div class="form_message_author">{{ theme.author.user.username }}</div>
                 </div>
 
                 {% comment %} кнопки редактировать и удалить {% endcomment %}
@@ -47,8 +47,7 @@
             
             {% comment %} текст сообщения {% endcomment %}
             <div class="forum_meaaage_text border pt-3 p-5">
-                <div class="mb-2 text-center">Тема</div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit aliquam consequatur officiis, et asperiores quasi, temporibus laudantium rem dolorem quo eum velit odit, repellendus praesentium officia non esse dicta. Delectus nesciunt alias dicta sapiente sint quibusdam magnam! Saepe doloremque quae unde itaque cupiditate maiores eaque facilis aperiam aliquam reprehenderit. Nam unde facilis iste cumque. Aspernatur nostrum odit eum cupiditate esse iste expedita eligendi mollitia labore rem! Quam sunt in ad atque, adipisci eum saepe itaque iusto voluptates ducimus dicta modi, vitae officiis repudiandae nulla excepturi libero non. Veritatis ea eaque, cupiditate cum corrupti obcaecati sunt reiciendis libero quia expedita velit vitae sed et quis laboriosam optio eligendi fugit dignissimos explicabo quaerat repellat quibusdam. Repellat, cumque facere dolore sint aut eligendi perspiciatis blanditiis numquam.
+                <div class="mb-2 text-center">{{theme.name}}</div>
                 {% comment %} кнопка просмотра обсуждения темы {% endcomment %}
                 <div class="forum_meaaage_text p-3">
                     <button type="button" class="btn btn-primary d-flex align-items-center float-end">
@@ -59,6 +58,8 @@
             </div>
 
         </div>
+        {% endfor %}
+        
 
         
     </section>
