@@ -38,6 +38,10 @@
 	height: 66px;
 	align-self:center;
 	background-color: rgba(28,28,28,0);
+	transition: 0.5s;
+}
+.rating_button:hover{
+	background: var(--color_2);
 }
 .triangle{
 	width: 60%;
@@ -47,4 +51,21 @@
 }
 .add{
 	margin-top: 3%;
+}
+.add_projects{
+	background: #094067;
+	border-color: #094067;;
+}
+.filter{
+	margin-right: 1em;
+}
+.cnt{
+	bottom: 0px;
+	vertical-align: center;
+	margin: auto;
+	vertical-align: middle;
+	left: 0.75em;
+}
+.cnt p{
+	margin-bottom: 0px;
 }

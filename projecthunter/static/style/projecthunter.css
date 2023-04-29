@@ -2,6 +2,7 @@
   --color_1: #4b587c;
   --color_2: #3DA9FC;
   --color_3: #d8eefe;
+  --color_4: #094067;;
 }
 .selector-for-some-widget { 
   box-sizing: content-box;
@@ -18,9 +19,17 @@ label {
 footer{
   background: var(--color_3);
   height: 100px;
+  margin-top: 3%;
 }
 header{
   border-bottom: 1px solid gray;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  background: white;
+}
+main{
+  min-height: calc(100vh - 80px);
 }
 .logo img{
   width: 5em; 
@@ -37,6 +46,7 @@ header{
   border-radius: 12px;
   margin-top: 7px;
   height: 55px;
+  flex-direction: row-reverse;
 }
 .btn-primary{
   background-color: var(--color_2);
