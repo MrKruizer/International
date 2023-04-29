@@ -1,8 +1,33 @@
 {% extends "base.html" %}
-{% load static %}
 {% block title %}
-	
+	Catalog
 {% endblock title %}
+{% block localcss %}
+	{% load static %}
+	<link rel="stylesheet" href="{% static "style/catalog.css" %}">
+{% endblock localcss %}
 {% block content %}
-	
+<div class="container">
+	<div class="row">
+		<div class="scroll col-12">
+			<div class="card">
+				<div class="div_avatar col-3 login">
+					<img src="" alt="" class="avatar">
+				</div>
+				<div class="text col-6 ">
+					<h1>Название проекта</h1>
+					<!-- 110 знаков максимум -->
+					<p>Описание проектаОписание проектаОписание проектаОписание проектаОписание проектаОписание проекта Описание</p>
+				</div>
+				<div class="rating col-2">
+					<button class="rating_button"> 
+						<div class="triangle">
+							
+						</div>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock content %}
