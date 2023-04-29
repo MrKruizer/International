@@ -10,53 +10,57 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+{% comment %} плюсик {% endcomment %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 {% endblock localcss %}
 
 {% block content %}
 
-
+<div class="d-flex justify-content-end align-items-center p-3">
+    <button class="btn btn-primary d-flex align-items-center">
+        Добавить тему
+        <span class="material-symbols-outlined">add</span>
+    </button>
+</div>
 
 <div class="forum p-3">
 
-    <section class="forum_asks">
+    <section class="forum_asks contain-fluid">
 
 
         <!-- макет вопросов форума -->
-        <div class="forum_ask shadow bg-info bg-gradient pos_rel">
+        <div class="forum_ask bg-info bg-gradient">
             {% comment %} заголовок сообщения {% endcomment %}
-            <header class="d-flex justify-content-between align-items-center px-3">
+            <header class="d-flex justify-content-between align-items-center flex-wrap">
+
                 {% comment %} аватарка и ник {% endcomment %}
-                <div class="forum_user_profile">
+                <div class="d-flex justify-content-center align-items-center my-3 col-12 col-lg">
                     <img src="{%static 'image/profile.png'%}">
                     <div class="form_message_author">Владелец вопроса</div>
                 </div>
 
+                {% comment %} тема {% endcomment %}
+                <div class="d-flex justify-content-center align-items-center my-3 forum_meaaage_text col-12 col-lg text-truncate">
+                    <div class="text-truncate">Тема</div>
+                </div>
+
+
                 {% comment %} кнопки редактировать и удалить {% endcomment %}
-                <div>
-                    {% comment %} кнопка редактировать пост {% endcomment %}
-                    <button type="button" class="btn btn-primary">
+                <div class="d-flex justify-content-center align-items-center my-3 col-12 col-lg">
+                    {% comment %} кнопка просмотреть посты {% endcomment %}
+                    <button type="button" class="btn btn-primary mx-2">
+                        <span class="material-symbols-outlined">left_panel_open</span>
+                    </button>
+                    {% comment %} кнопка редактировать тему {% endcomment %}
+                    <button type="button" class="btn btn-primary mx-2">
                         <span class="material-symbols-outlined">edit</span>
                     </button>
-                    {% comment %} кнопка удалить пост {% endcomment %}
-                    <button type="button" class="btn btn-danger">
+                    {% comment %} кнопка удалить тему {% endcomment %}
+                    <button type="button" class="btn btn-danger mx-2">
                         <span class="material-symbols-outlined">delete</span>
                     </button>
                 </div>
             </header>
-
-            
-            {% comment %} текст сообщения {% endcomment %}
-            <div class="forum_meaaage_text border pt-3 p-5">
-                <div class="mb-2 text-center">Тема</div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit aliquam consequatur officiis, et asperiores quasi, temporibus laudantium rem dolorem quo eum velit odit, repellendus praesentium officia non esse dicta. Delectus nesciunt alias dicta sapiente sint quibusdam magnam! Saepe doloremque quae unde itaque cupiditate maiores eaque facilis aperiam aliquam reprehenderit. Nam unde facilis iste cumque. Aspernatur nostrum odit eum cupiditate esse iste expedita eligendi mollitia labore rem! Quam sunt in ad atque, adipisci eum saepe itaque iusto voluptates ducimus dicta modi, vitae officiis repudiandae nulla excepturi libero non. Veritatis ea eaque, cupiditate cum corrupti obcaecati sunt reiciendis libero quia expedita velit vitae sed et quis laboriosam optio eligendi fugit dignissimos explicabo quaerat repellat quibusdam. Repellat, cumque facere dolore sint aut eligendi perspiciatis blanditiis numquam.
-                {% comment %} кнопка просмотра обсуждения темы {% endcomment %}
-                <div class="forum_meaaage_text p-3">
-                    <button type="button" class="btn btn-primary d-flex align-items-center float-end">
-                        Открыть
-                        <span class="material-symbols-outlined">left_panel_open</span>
-                    </button>
-                </div>
-            </div>
 
         </div>
 

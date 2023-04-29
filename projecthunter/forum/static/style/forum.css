@@ -20,14 +20,14 @@
     text-decoration: none;
 }
 
-.forum_messages > div:first-child, .forum_asks > div:first-child{
+.forum_messages > div:first-child, .forum_ask > header:first-child{
     margin:0 0 3rem 0;
 }
 
-.forum_messages > div, .forum_asks > div{
+.forum_messages > div, .forum_ask > header{
     margin: 3rem 0;
 }
 
-.forum_messages > div:last-child, .forum_asks > div:last-child{
+.forum_messages > div:last-child, .forum_ask > header:last-child{
     margin: 3rem 0 0 0;
 }

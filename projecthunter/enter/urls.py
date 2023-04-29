@@ -5,6 +5,6 @@ from django.urls import path, re_path
 from . import views
 
 urlpatterns = [
-    re_path(r'^signin/$', views.signin, name='sigup'),
-    re_path(r'^signup/$', views.signup, name='signin')
+    re_path(r'^signup/$', views.signin, name='signup'),
+    re_path(r'^signin/$', views.signup, name='signin')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

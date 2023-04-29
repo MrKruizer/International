@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Изменение пост
+{% endblock title %}
+
+{% block localcss %}
+<link rel="stylesheet" href="{%static 'style/forum.css'%}">
+
+{% comment %} иконка публикации {% endcomment %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+{% comment %} иконка очистки {% endcomment %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+{% endblock localcss %}
+
+{% block content %}
+
+<h1 class="text-center mb-1 mt-3">Изменение поста</h1>
+
+<form class="pt-1 p-4">
+    {% comment %} текстовое поле {% endcomment %}
+    <div class="mb-3">
+        <label for="creat_post" class="form-label">Измените пост</label>
+        <textarea class="form-control" rows="5" name="creat_post"></textarea>
+    </div>
+
+    {% comment %} кнопки отправить и очистить {% endcomment %}
+    <div class="d-flex justify-content-end">
+
+        {% comment %} кнопка отправить {% endcomment %}
+        <button type="submit" class="btn btn-primary d-flex align-items-center">
+            Опубликовать
+            <span class="material-symbols-outlined">publish</span>
+        </button>
+        
+        {% comment %} кнопка очистить {% endcomment %}
+        <button type="reset" class="btn btn-danger d-flex align-items-center ms-1">
+            Очистить
+            <span class="material-symbols-outlined">restart_alt</span>
+        </button>
+    </div>
+</form>
+
+{% endblock content %}
