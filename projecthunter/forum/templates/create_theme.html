@@ -22,6 +22,7 @@
 <form class="pt-1 p-4" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
+
     <div class="d-flex justify-content-end">
         <button type="submit" class="btn btn-primary d-flex align-items-center">
             Опубликовать

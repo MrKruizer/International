@@ -4,7 +4,7 @@
 }
 
 .forum{
-    background-image: linear-gradient(var(--forum_first_gradientcolor, vor(--forum_second_gradientcolor)));
+    background: linear-gradient(0deg, rgba(0,0,0,0),var(--forum_second_gradientcolor));
 }
 
 .pos_rel{
@@ -30,4 +30,9 @@
 
 .forum_messages > div:last-child, .forum_ask > header:last-child{
     margin: 3rem 0 0 0;
+}
+
+.forum {
+    z-index: 1;
+    position: relative;
 }

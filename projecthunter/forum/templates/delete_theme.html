@@ -1,0 +1,24 @@
+
+
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+ПЕодтверждение удаления темы
+{% endblock title %}
+
+{% block localcss %}
+<link rel="stylesheet" href="{%static 'style/forum.css'%}">
+
+{% endblock localcss %}
+
+{% block content %}
+
+<div class="container">
+    <p class="text-center">Подтвердите, что хотите удалить тему и все его посты?</p>
+    <form class="text-center pt-3">
+        <button type="submit">Подтверждаю</button>
+    </form>
+</div>
+
+{% endblock content %}

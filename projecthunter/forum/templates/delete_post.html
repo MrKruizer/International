@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Подтверждение удаления поста
+{% endblock title %}
+
+{% block localcss %}
+<link rel="stylesheet" href="{%static 'style/forum.css'%}">
+
+{% endblock localcss %}
+
+{% block content %}
+
+<div class="container">
+    <p class="text-center">Подтвердите, что хотите удалить пост?</p>
+    <form class="text-center pt-3">
+        <button type="submit">Подтверждаю</button>
+    </form>
+</div>
+
+{% endblock content %}
