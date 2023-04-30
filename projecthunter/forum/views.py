@@ -20,7 +20,7 @@ def create_post(request, theme):
 			user = request.user.id
 			profile = Profile.objects.get(user_id = user)
 			Post.objects.create(author = profile, theme_id=theme, text = text)
-			return HttpResponseRedirect(reverse_lazy('posts', kwargs={'theme':theme.id}))
+			return HttpResponseRedirect(reverse_lazy('posts', kwargs={'theme':theme}))
 		else:
 			return HttpResponseRedirect(reverse_lazy('login'))
 	form = Post_Form()
@@ -28,12 +28,12 @@ def create_post(request, theme):
 
 @login_required
 def update_post(request,theme,pk):
-	if request.method == 'Post':
+	if request.method == 'POST':
 		text = request.POST['text']
 		post = Post.objects.get(id = pk)
 		post.text = text
 		post.save(update_fields=['text'])
-		return HttpResponseRedirect(reverse_lazy('posts', kwargs={'theme':theme.id}))
+		return HttpResponseRedirect(reverse_lazy('posts', kwargs={'theme':theme}))
 	form = Post_Form()
 	return render(request, 'update_post.html', context={'form': form})
 
@@ -45,7 +45,7 @@ def create_theme(request):
 		profile = Profile.objects.get(user_id = request.user.id)
 		theme = Theme.objects.create(author = profile)
 		post = Post.objects.create(author = profile, theme=theme, text = text)
-		return HttpResponseRedirect(reverse_lazy('posts', kwargs={'theme':theme.id}))
+		return HttpResponseRedirect(reverse_lazy('posts', kwargs={'theme':theme}))
 	form = Forum_Form()
 	return render(request, 'create_theme.html', context={'form': form})
 
@@ -55,8 +55,8 @@ def update_theme(request, theme):
 		theme_name = request.POST['theme']
 		theme_old = Theme.objects.get(id=theme)
 		theme_old.theme = theme_name
-		theme_old.save(update_fields=['theme'])
-		return HttpResponseRedirect(reverse_lazy('posts', kwargs={'theme':theme.id}))
+		theme_old.save(update_fields=['name'])
+		return HttpResponseRedirect(reverse_lazy('posts', kwargs={'theme':theme}))
 	form = Update_Forum_Form()
 	return render(request, 'update_theme.html', context={'form':form})
 
@@ -72,7 +72,7 @@ class Posts_List_View(generic.ListView):
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
 		theme = Theme.objects.get(id = context['posts'][0].theme.id)
-		context["theme"] = theme.name
+		context["name"] = theme.name
 		context["theme_id"] = theme.id
 		context["theme_author"] = theme.author.user.username 
 		return context

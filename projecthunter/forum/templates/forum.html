@@ -17,10 +17,8 @@
 {% block content %}
 
 <div class="d-flex justify-content-end align-items-center p-3">
-    <button class="btn btn-primary d-flex align-items-center">
-        Добавить тему
-        <span class="material-symbols-outlined"><a href="{% url 'create_theme' %}"></a>add</span>
-    </button>
+        <a class="btn btn-primary d-flex align-items-center" href="{% url 'create_theme' %}">
+        <span class="material-symbols-outlined">add</span></a>
 </div>
 <div class="container">
     {% for theme in themes %}
@@ -43,7 +41,7 @@
                 <div class="d-flex justify-content-center my-3 col-7">
                     <div class="">
                         <a href="{% url 'posts' theme=theme.id %}">
-                            <p class="font-weight-bold">    ТемаТемаТемаТемаТемаТемаТемаТемаТема
+                            <p class="font-weight-bold">{{theme.name}}
                             </p>
                         </a>
 
