@@ -43,10 +43,12 @@ class Project(models.Model):
 	name = models.CharField(max_length=254)
 	logo = models.ImageField(upload_to='static/images',height_field=None, width_field=None, max_length=100, default='static/image/cv.png')
 	tags = models.ManyToManyField(Tag,blank=True)
+	roles = models.ManyToManyField(Role, blank=True)
 	skills = models.ManyToManyField(Skill, blank=True)
 	description = models.TextField(blank=True, max_length=1000)
 	git = models.URLField(max_length = 254, blank=True)
 	author = models.ForeignKey('enter.Profile', on_delete=models.CASCADE, blank=True, null=True)
+	forum = models.ForeignKey('forum.Theme', on_delete=models.SET_NULL, blank=True, null=True)
 	uurl = models.UUIDField('Invite ref',default=uuid.uuid4,help_text='Unique identifier for the referral invitation to the team')
 	def __str__(self):
 		return self.name

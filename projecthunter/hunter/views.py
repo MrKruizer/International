@@ -5,13 +5,14 @@ from django.http import HttpResponseRedirect
 from django.views.generic.edit import CreateView
 from django.contrib.auth.models import User 
 from django.urls import reverse_lazy
+from enter.models import Profile
+from forum.models import Theme, Post
 from django.views import generic
-from  enter.models import Profile
 from .models import *
 from .forms import *
 
 def project(request, pk):
-	return render(request, 'catalog/project.html')
+	return render(request, 'catalog/project.html', context={'project': Project.objects.get(id=pk)})
 
 
 
@@ -26,6 +27,10 @@ def project_create(request):
 		last = Project.objects.filter(author = profile).last()
 		profile.projects.add(last.id)
 		profile.save()
+		theme = Theme.objects.create(author = profile)
+		post = Post.objects.create(author = profile, theme=theme, text = project.description)
+		last.forum = theme
+		last.save()
 		return HttpResponseRedirect(reverse_lazy('project', kwargs={'pk':project.id}))
 	form = Project_Form(initial={'author': Profile})
 	return render(request, 'catalog/project_create.html', context={'form': form})

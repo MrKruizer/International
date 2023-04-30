@@ -12,12 +12,12 @@
 		<div class="row">
 				<div class="logo col-2">
 					<p >Логотип:</p>
-					<img src="" alt="">
+					<img src="{{project.logo.url}}" alt="">
 				</div>
 				<div class="name col-10">
 						<p>Название:</p>
 						<div class="field login">
-							<p>InternationlTeam</p>
+							<p>{{project.name}}</p>
 						</div>
 				</div>
 		</div>
@@ -30,46 +30,25 @@
 							<div class="col-4">
 							<p>Теги:</p>
 								<div class="tags">
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
+									{% for tag in project.tags.all %}
+										<span class="tag">{{tag}}</span>
+									{% endfor %}
 								</div>
 							</div>
 							<div class="col-4">
 								<p>Необходимые навыки:</p>
 								<div class="tags">
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
+									{% for skill in project.skills.all %}
+										<span class="tag">{{skill}}</span>
+									{% endfor %}
 								</div>
 							</div>
 						<div class="col-4">
 								<p>Требуемые направления:</p>
 								<div class="tags">
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
-									<span class="tag">Тэг</span>
+									{% for role in project.roles.all %}
+										<span class="tag">{{role}}</span>
+									{% endfor %}
 								</div>
 							</div>
 						</div>
@@ -88,14 +67,14 @@
 			</div>
 			<div class="links col-6  mt-5">
 				<div class="link_creator field mt-2 text-center">
-					Ссылка на создателя
+					<a href="{% url 'profile' pk=project.author.id %}">Ссылка на создателя</a>
 				</div>
 				<div class="link_accept field mt-4 text-center">
-					Ссылка на приглашение
+					<a href="#">Ссылка на приглашение</a>
 				</div>
 			</div>
 			<div class="col-3 forum_link field mt-5 login text-center">
-				<a href="" class="nav-link text_a">Тема на форуме</a>
+				<a href="{% url 'posts' theme=project.forum.id %}" class="nav-link text_a">Тема на форуме</a>
 			</div>
 		</div>
 	</div>
@@ -105,7 +84,7 @@
 			<p>Описание:</p>
 			<div class="row">
 				<div class="div_text field col-12 tags">
-					<p>ОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписаниеОписание</p>
+					<p>{{project.description}}</p>
 				</div>
 			</div>
 		</div>
