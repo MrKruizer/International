@@ -14,7 +14,7 @@
 			Фильтр
 		</div>
 		<div class="add_projects btn btn-primary col-lg-2 col-md-3 col-sm-6 m-0">
-			<a href="{% url 'project_create' %}">Добавить</a>
+			<a href="{% url 'project_create' %}" class="div_button">Добавить</a>
 		</div>
 	</div>
 	{% for project in project_list %}
@@ -23,7 +23,7 @@
 				<img src="{{project.logo.url}}" alt="" class="avatar">
 			</div>
 			<div class="text col-6 ">
-				<h1>{{ project.get_author_username }}: <a href="{% url 'project' pk=project.id %}">{{ project.name }}</a></h1>
+				<h1>{{ project.author }}: <a href="{% url 'project' pk=project.id %}">{{ project.name }}</a></h1>
 				<!-- 110 знаков максимум -->
 				<p>{{ project.description }}}</p>
 			</div>
