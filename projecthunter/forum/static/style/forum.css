@@ -3,10 +3,6 @@
     --forum_second_gradientcolor: #ccc;
 }
 
-.forum{
-    background: linear-gradient(0deg, rgba(0,0,0,0),var(--forum_second_gradientcolor));
-}
-
 .pos_rel{
     position: relative;
 }
@@ -35,4 +31,25 @@
 .forum {
     z-index: 1;
     position: relative;
+    border-radius: 10px;
+}
+.forum_ask{
+    height: 100%;
+}
+.my-3 p{
+}
+.my-3{
+    text-align: top;
+}
+.font-weight-bold{
+    font-weight: 600;
+    font-size: 25px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.button_forum{
+    font-size: 14px;
+}
+.message_button{
+    display: flex;
 }

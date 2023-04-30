@@ -22,68 +22,42 @@
         <span class="material-symbols-outlined"><a href="{% url 'create_theme' %}"></a>add</span>
     </button>
 </div>
+<div class="container">
+    {% for theme in themes %}
+       <div class="row">
+            <div class="forum p-3 col-12">
+                <section class="forum_asks contain-fluid">
+                    <!-- макет вопросов форума -->
+                    <div class="forum_ask shadow bg-gradient pos_rel">
+                        {% comment %} заголовок сообщения {% endcomment %}
 
-<div class="forum p-3">
-
-    <section class="forum_asks contain-fluid">
-
-        {% for theme in themes %}
-        <!-- макет вопросов форума -->
-        <div class="forum_ask shadow bg-info bg-gradient pos_rel">
-            {% comment %} заголовок сообщения {% endcomment %}
-
-            <div class="d-flex justify-content-between align-items-center flex-wrap">
-
+                        <div class="d-flex justify-content-between align-items-center flex-wrap"></div>
+            <div class="row col-12">
                 {% comment %} аватарка и ник {% endcomment %}
-                <div class="forum_user_profile">
-                    <img src="{{theme.author.avatar.url}}">
+                <div class="forum_user_profile col-4 ms-4 mt-3 mb-3">
+                    <img src="{{theme.author.avatar.url}}" style="border-radius: 5px 5px">
                     <div class="form_message_author">{{ theme.author.user.username }}</div>
                 </div>
 
                 {% comment %} тема {% endcomment %}
-                <div class="d-flex justify-content-center my-3 col-12 text-truncate">
-                    <div class="text-truncate">Тема</div>
-                </div>
+                <div class="d-flex justify-content-center my-3 col-7">
+                    <div class="">
+                        <a href="{% url 'posts' theme=theme.id %}">
+                            <p class="font-weight-bold">    ТемаТемаТемаТемаТемаТемаТемаТемаТема
+                            </p>
+                        </a>
 
-
-                {% comment %} кнопки редактировать и удалить {% endcomment %}
-                <div class="d-flex justify-content-center align-items-center my-3 col-12 col-lg">
-                    {% comment %} кнопка просмотреть посты {% endcomment %}
-                    <button type="button" class="btn btn-primary mx-2">
-                        <a href="{% url 'posts' theme=theme.id %}"><span class="material-symbols-outlined">left_panel_open</span></a>
-                    </button>
-                    {% comment %} кнопка редактировать тему {% endcomment %}
-                    <button type="button" class="btn btn-primary mx-2">
-                        <a href="{% url 'update_theme' theme=theme.id %} "><span class="material-symbols-outlined">edit</span></a>
-                    </button>
-                    {% comment %} кнопка удалить тему {% endcomment %}
-                    <button type="button" class="btn btn-danger mx-2">
-                        <span class="material-symbols-outlined">delete</span>
-                    </button>
+                    </div>
                 </div>
             </div>
 
-            
-            {% comment %} текст сообщения {% endcomment %}
-            <div class="forum_meaaage_text border pt-3 p-5">
-                <div class="mb-2 text-center">{{theme.name}}</div>
-                {% comment %} кнопка просмотра обсуждения темы {% endcomment %}
-                <div class="forum_meaaage_text p-3">
-                    <button type="button" class="btn btn-primary d-flex align-items-center float-end">
-                        Открыть
-                        <span class="material-symbols-outlined">left_panel_open</span>
-                    </button>
-                </div>
+                    </div>
+                </section>
             </div>
-
-        </div>
-        
+        </div>                    
         {% endfor %}
-        
-
-        
-    </section>
 </div>
+    
 
 {% include "paginator.html" %}
 {% endblock content %}
