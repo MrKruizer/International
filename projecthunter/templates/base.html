@@ -32,13 +32,18 @@
 				      <a class="nav-link text_color" href="{% url 'forum' %}">ФОРУМ</a>
 				    </li>
 				    <li class="nav-item padding_elements">
-				      <a class="nav-link text_color" href="#">О НАС</a>
+				      <a class="nav-link text_color" href="https://github.com/MrKruizer/International">О НАС</a>
 				    </li>
 				  </ul>
 				</nav>
 				<div class="col-4 d-flex justify-content-center mt-2">
 				{% if user.is_authenticated %}
-					<a href=""><img src="{% static "image/profile.png" %}" alt=""></a>
+					<a href="#" class="btn login text_color">
+							Профиль
+					</a>
+					<a href="{% url 'logout' %}" class="div_button btn btn-danger login">
+							Выйти
+					</a>
 				{% else %}
 					<a href="{% url 'login' %}" class="btn login text_color">
 							Войти
