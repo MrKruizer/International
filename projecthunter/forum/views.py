@@ -20,7 +20,7 @@ def create_post(request, theme):
 			user = request.user.id
 			profile = Profile.objects.get(user_id = user)
 			Post.objects.create(author = profile, theme_id=theme, text = text)
-			return HttpResponseRedirect(reverse_lazy('posts', kwargs={'theme':theme}))
+			return HttpResponseRedirect(reverse_lazy('posts', kwargs={'theme':theme.id}))
 		else:
 			return HttpResponseRedirect(reverse_lazy('login'))
 	form = Post_Form()
@@ -45,7 +45,7 @@ def create_theme(request):
 		profile = Profile.objects.get(user_id = request.user.id)
 		theme = Theme.objects.create(author = profile)
 		post = Post.objects.create(author = profile, theme=theme, text = text)
-		return HttpResponseRedirect(reverse_lazy('posts', kwargs={'theme':theme}))
+		return HttpResponseRedirect(reverse_lazy('posts', kwargs={'theme':theme.id}))
 	form = Forum_Form()
 	return render(request, 'create_theme.html', context={'form': form})
 
@@ -56,7 +56,7 @@ def update_theme(request, theme):
 		theme_old = Theme.objects.get(id=theme)
 		theme_old.theme = theme_name
 		theme_old.save(update_fields=['name'])
-		return HttpResponseRedirect(reverse_lazy('posts', kwargs={'theme':theme}))
+		return HttpResponseRedirect(reverse_lazy('posts', kwargs={'theme':theme.id}))
 	form = Update_Forum_Form()
 	return render(request, 'update_theme.html', context={'form':form})
 
@@ -93,4 +93,4 @@ class Theme_Delete_View(DeleteView):
 class Post_Delete_View(DeleteView):
     model = Post
     template_name = "delete_post.html"
-    success_url = reverse_lazy('posts')
+    success_url = reverse_lazy('forum')
