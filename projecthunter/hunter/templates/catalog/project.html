@@ -67,15 +67,21 @@
 			</div>
 			<div class="links col-6  mt-5">
 				<div class="link_creator field mt-2 text-center">
-					<a href="{% url 'profile' pk=project.author.id %}">Ссылка на создателя</a>
+					{% if not project.author is None %}
+						<a href="{% url 'profile' pk=project.author.id %}">Ссылка на создателя</a>
+					{% endif %}
 				</div>
 				<div class="link_accept field mt-4 text-center">
 					<a href="#">Ссылка на приглашение</a>
 				</div>
 			</div>
+				{% if not project.forum is None %}
 			<div class="col-3 forum_link field mt-5 login text-center">
-				<a href="{% url 'posts' theme=project.forum.id %}" class="nav-link text_a">Тема на форуме</a>
+					<a href="{% url 'posts' theme=project.forum.id %}" class="nav-link text_a">Тема на форуме</a>
+				
+				
 			</div>
+			{% endif %}
 		</div>
 	</div>
 
