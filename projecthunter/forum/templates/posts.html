@@ -25,68 +25,82 @@
 {% block content %}
 
 
+<div class="container">
+    <div class="row">
+        <div class="forum p-3 col-12">
 
-<div class="forum p-3">
-
-    {% comment %} заголовок {% endcomment %}
-    <section class="forum_header d-flex justify-content-between align-items-center pb-3 bg-primary bg-gradient p-3 mb-3 shadow rounded">
-        <div class="forum_ask">
-            {{theme}} <br>
-            {% comment %} кнопка менять тему {% endcomment %}
-            <a href="{% url 'update_theme' theme=theme_id %}" class="text-info">Изменить</a>
-        </div>
-        <div class="forum_user_profile">
-            <div class="form_message_author"> {{theme_author}} </div>
-            <img src="{%static 'image/profile.png'%}">
-        </div>
-    </section>
-
-
-    <section class="forum_messages">
-
-        {% for post in posts %}
-            <!-- макет сообщения -->
-            <div class="forum_message shadow bg-info bg-gradient">
-            {% comment %} заголовок сообщения {% endcomment %}
-                <header class="d-flex justify-content-between align-items-center px-3">
-                    {% comment %} аватарка и ник {% endcomment %}
-                    <div class="forum_user_profile">
-                        <img src="{{ post.author.avatar.url }}">
-                        <div class="form_message_author"> {{post.author.user.username}} </div>
+            {% comment %} заголовок {% endcomment %}
+            <section class="forum_header d-flex align-items-center pb-3 p-3 mb-3 shadow">
+                    <div class="forum_ask col-9">
+                        <p class="font-weight-bold">ТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематема</p>
+                        {% comment %} кнопка менять тему {% endcomment %}
+                        <a href="{% url 'update_theme' theme=theme_id %}" class="button_forum">Изменить</a>
+                        <a href="{% url 'update_theme' theme=theme_id %" class="button_forum">Удалить</a>
                     </div>
-
-                    {% comment %} кнопки редактировать и удалить {% endcomment %}
-                    <div>
-                        {% comment %} кнопка редактировать пост {% endcomment %}
-                        <button type="button" class="btn btn-primary">
-                            <span class="material-symbols-outlined">edit</span>
-                        </button>
-                        {% comment %} кнопка удалить пост {% endcomment %}
-                        <button type="button" class="btn btn-danger">
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>
+                    <div class="forum_user_profile col-3 justify-content-end">
+                        <div class="form_message_author px-"> {{theme_author}} </div>
+                        <img src="{%static 'image/profile.png'%}">
                     </div>
-                </header>
+                </div>
+            </section>
 
-                
-                {% comment %} текст сообщения {% endcomment %}
-                <div class="forum_meaaage_text border p-5">
-                    {{post.text}}
+
+            <section class="forum_messages">
+
+                {% for post in posts %}
+        <div class="row">
+            <div class="forum p-3 col-12">
+                <section class="forum_asks contain-fluid">
+                    <!-- макет вопросов форума -->
+                    <div class="forum_ask shadow">
+                        {% comment %} заголовок сообщения {% endcomment %}
+
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            
+                        </div>
+                    
+                        <div class="row col-12">
+                            {% comment %} аватарка и ник {% endcomment %}
+                            <div class="forum_user_profile col-4 ms-4 mt-3 mb-3">
+                                <img src="{{post.author.avatar.url}}" style="border-radius: 5px 5px">
+                                <div class="form_message_author ps-4">{{ post.author.avatar.url }}</div>
+                            </div>
+
+                            {% comment %} тема {% endcomment %}
+                            <div class="d-flex justify-content-center my-3 col-7">
+                                <div class="">
+                                        <p class="font-weight-bold">СообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщение
+                                        </p>
+
+                                </div>
+                            </div>
+                        </div>
+                <div class="col-12 justify-content-end button_forum message_button p-4">
+                    <a href="" class="button_forum p-1">Изменить</a>
+                    <a href="" class="button_forum p-1">Удалить</a>
                 </div>
             </div>
-        {% endfor %}
-        
 
-    </section>
+                    
+                </section>
+            </div>
+        </div>    
+                {% endfor %}
+                
 
-    <form class="pt-1 p-4">
-        <div class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-primary d-flex align-items-center">
-                Добавить пост
-                <span class="material-symbols-outlined">send</span>
-            </button>
-        </div>
-    </form>
+            </section>
+
+            <form class="pt-1 p-4">
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary d-flex align-items-center">
+                        Добавить пост
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
+                </div>
+            </form>
 </div>
 
 {% endblock content %}
+
+
+{{post.author.user.username}}
