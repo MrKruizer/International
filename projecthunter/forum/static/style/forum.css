@@ -46,6 +46,8 @@
     font-size: 25px;
     word-wrap: break-word;
     word-break: break-all;
+    overflow: hidden;
+    width: 20em;
 }
 .button_forum{
     font-size: 14px;
