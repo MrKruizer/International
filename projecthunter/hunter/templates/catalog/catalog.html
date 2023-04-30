@@ -25,13 +25,15 @@
 				</select>
 		</form>
 		</div>
-		<div class="col-lg-2 col-md-3 col-sm-6 m-0">
-			<a href="{% url 'project_create' %}" class="div_button">
-				<div class=" btn btn-primary">
-					Добавить
-				</div>
-			</a>
-		</div>
+		{% if user.is_authenticated %}
+			<div class="col-lg-2 col-md-3 col-sm-6 m-0">
+				<a href="{% url 'project_create' %}" class="div_button">
+					<div class=" btn btn-primary">
+						Добавить
+					</div>
+				</a>
+			</div>
+		{% endif %}
 	</div>
 	{% for project in project_list %}
 		<div class="row">
