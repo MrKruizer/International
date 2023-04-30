@@ -13,7 +13,8 @@
 
 <div class="container">
     <p class="text-center">Подтвердите, что хотите удалить пост?</p>
-    <form class="text-center pt-3">
+    <form class="text-center pt-3" method="post">
+        {% csrf_token %}  
         <button type="submit">Подтверждаю</button>
     </form>
 </div>
