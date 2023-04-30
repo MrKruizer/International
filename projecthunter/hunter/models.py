@@ -46,11 +46,12 @@ class Project(models.Model):
 	skills = models.ManyToManyField(Skill, blank=True)
 	description = models.TextField(blank=True, max_length=1000)
 	git = models.URLField(max_length = 254, blank=True)
+	author = models.ForeignKey('enter.Profile', on_delete=models.CASCADE, blank=True, null=True)
 	uurl = models.UUIDField('Invite ref',default=uuid.uuid4,help_text='Unique identifier for the referral invitation to the team')
 	def __str__(self):
 		return self.name
 	def get_author_username(self):
-		return Profile.objects.get(projects=self.id).user.username
+		return Profile.objects.filter(projects=self.id).first().user.username
 	def reputation(self):
 		return len(Project_Reputation.objects.filter(project=self.id))
 	

@@ -19,23 +19,13 @@
 
 <h1 class="text-center mb-1 mt-3">Создание Темы</h1>
 
-<form class="pt-1 p-4">
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" name="name_theme">
-        <label for="name_theme">Название темы</label>
-      </div>
-    <div class="mb-3">
-        <label for="creat_post" class="form-label">Введите пост</label>
-        <textarea class="form-control" rows="5" name="creat_post"></textarea>
-    </div>
+<form class="pt-1 p-4" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
     <div class="d-flex justify-content-end">
         <button type="submit" class="btn btn-primary d-flex align-items-center">
             Опубликовать
             <span class="material-symbols-outlined">publish</span>
-        </button>
-        <button type="reset" class="btn btn-danger d-flex align-items-center ms-1">
-            Очистить
-            <span class="material-symbols-outlined">restart_alt</span>
         </button>
     </div>
 </form>

@@ -37,11 +37,6 @@ def update_post(request,theme,pk):
 	return render(request, 'update_post.html', context={'form': form})
 
 @login_required
-def delete_theme(request,theme):
-	if request.method == "Post":
-		Post.objects.get
-
-@login_required
 def create_theme(request):
 	if request.method == "POST":
 		theme_name = request.POST['theme']

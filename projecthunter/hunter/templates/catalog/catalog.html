@@ -14,7 +14,7 @@
 			Фильтр
 		</div>
 		<div class="add_projects btn btn-primary col-lg-2 col-md-3 col-sm-6 m-0">
-			Добавить
+			<a href="{% url 'project_create' %}">Добавить</a>
 		</div>
 	</div>
 	{% for project in project_list %}

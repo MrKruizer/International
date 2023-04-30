@@ -19,11 +19,11 @@
 
 <h1 class="text-center mb-1 mt-3">Изменение поста</h1>
 
-<form class="pt-1 p-4">
+<form class="pt-1 p-4" method="post">
+    {% csrf_token %}
     {% comment %} текстовое поле {% endcomment %}
     <div class="mb-3">
-        <label for="creat_post" class="form-label">Измените пост</label>
-        <textarea class="form-control" rows="5" name="creat_post"></textarea>
+        {{form}}
     </div>
 
     {% comment %} кнопки отправить и очистить {% endcomment %}
@@ -34,11 +34,6 @@
             Опубликовать
             <span class="material-symbols-outlined">publish</span>
         </button>
-        
-        {% comment %} кнопка очистить {% endcomment %}
-        <button type="reset" class="btn btn-danger d-flex align-items-center ms-1">
-            Очистить
-            <span class="material-symbols-outlined">restart_alt</span>
         </button>
     </div>
 </form>
