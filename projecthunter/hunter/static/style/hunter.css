@@ -22,6 +22,9 @@ label{
 	text-align: top;
 	height: 100%;
 }
+.div_button{
+	text-decoration: none;
+}
 .text p{
 	margin-bottom: 0px;
 	font-size: 16px;

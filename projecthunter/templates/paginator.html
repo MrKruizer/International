@@ -1,24 +1,35 @@
 {% block pagination %}
     {% if is_paginated %}
-        <div class="d-flex justify-content-center align-items-center my-3 pagination">
-        	<div class="btn-group">
-	            <span class="page-links">
-	                {% if page_obj.has_previous %}
-	                	<button class="btn btn-outline-primary d-flex justify-content-center align-items-center">
-	                		<a href="{{ request.path }}?page={{ page_obj.previous_page_number }}"><span class="material-symbols-outlined left">expand_less</span></a>
-						</button>
-	                {% endif %}
-	                <button class="btn border">
-	                	<span class="page-current">{% comment %} Номер страницы {% endcomment %}{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
-					</button>
-	                {% if page_obj.has_next %}
-	                <button class="btn btn-outline-primary d-flex justify-content-center align-items-center">
-	                	<a href="{{ request.path }}?page={{ page_obj.next_page_number }}"><span class="material-symbols-outlined right">expand_less</span></a>
-	                </button>    
-	                {% endif %}
-	            </span>
+    <div class="container">
+    	<div class="row">
+	        <div class="d-flex justify-content-center align-items-center my-3 pagination">
+	        	<div class="btn-group col-12 justify-content-center">
+	        		<div class="row">
+			            <span class="page-links2 col-12">
+			                {% if page_obj.has_previous %}
+			                	<button class="btn btn-outline-primary  justify-content-center col-6 arrow">
+			                		<a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">
+			                			<span class="material-symbols-outlined left mt-1">expand_less</span>
+			                		</a>
+								</button>
+			                {% endif %}
+			                <button class="btn border col-5 number">
+			                	<span class="page-current">{% comment %} Номер страницы {% endcomment %}{{ page_obj.number }}</span>
+							</button>
+			                {% if page_obj.has_next %}
+			                <button class="btn btn-outline-primary justify-content-center col-6 arrow">
+			                	<a href="{{ request.path }}?page={{ page_obj.next_page_number }}">
+			                		<span class="material-symbols-outlined right mt-1">expand_less</span>
+			                	</a>
+			                </button>    
+			                {% endif %}
+			            </div>
+		            </span>
+		        </div>
 	        </div>
-        </div>
+    	</div>
+    </div>
+
     {% endif %}
 {% endblock pagination %}
 

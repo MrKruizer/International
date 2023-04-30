@@ -75,3 +75,9 @@ main{
 .right{
 	transform: rotateZ(90deg);
 }
+.number{
+  height: 100%;
+}
+.arrow{
+  display: inline-flex;
+}
