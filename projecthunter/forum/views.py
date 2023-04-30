@@ -74,7 +74,8 @@ class Posts_List_View(generic.ListView):
 		theme = Theme.objects.get(id = context['posts'][0].theme.id)
 		context["name"] = theme.name
 		context["theme_id"] = theme.id
-		context["theme_author"] = theme.author.user.username 
+		context["theme_author"] = theme.author.user.username
+		context["avatar"] = theme.author.avatar.url
 		return context
 
 class Forum_List_View(generic.ListView):
