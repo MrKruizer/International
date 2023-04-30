@@ -127,6 +127,9 @@ li select::-webkit-scrollbar-thumb{
 li{
 	list-style-type: none;
 }
+ul{
+	list-type: none;
+}
 ul li{
 	list-style-type: disc;
 }
@@ -140,4 +143,15 @@ input{
 }
 input#id_avatar{
 	box-shadow: none;
+}
+ul li{
+	max-height: 15em;
+}
+ul li div{
+
+	display: flex;
+	flex-wrap: wrap;
+	margin: 3px;
+	margin-bottom: 0px;
+	margin-top: 0px;
 }

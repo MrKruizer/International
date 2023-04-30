@@ -10,11 +10,25 @@
 {% block content %}
 <div class="container scroll">
 	<div class="row justify-content-center mt-2">
-		<div class="filter btn col-lg-1 col-md-2 col-sm-5 mr-1">
-			Фильтр
+		<div class="filter btn col-lg-1 col-md-2 col-sm-5 mr-1 pt-0">
+			<form action="" method="get">
+				{% csrf_token %}
+				<input type="submit" value="Применить" class="btn btn-primary mt-0">
+				<select name="tag" id="" multiple="true">
+					<option value="Chat">Bot</option>
+					<option value="Mobile">Mobile</option>
+					<option value="Client-Server">Client-Server</option>
+					<option value="Web-site">Web-site</option>
+					<option value="ML">ML</option>
+				</select>
+		</form>
 		</div>
-		<div class="add_projects btn btn-primary col-lg-2 col-md-3 col-sm-6 m-0">
-			<a href="{% url 'project_create' %}" class="div_button">Добавить</a>
+		<div class="col-lg-2 col-md-3 col-sm-6 m-0">
+			<a href="{% url 'project_create' %}" class="div_button">
+				<div class=" btn btn-primary">
+					Добавить
+				</div>
+			</a>
 		</div>
 	</div>
 	{% for project in project_list %}
