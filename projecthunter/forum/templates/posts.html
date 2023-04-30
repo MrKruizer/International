@@ -32,10 +32,10 @@
             {% comment %} заголовок {% endcomment %}
             <section class="forum_header d-flex align-items-center pb-3 p-3 mb-3 shadow">
                     <div class="forum_ask col-9">
-                        <p class="font-weight-bold">ТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематемаТематема</p>
+                        <p class="font-weight-bold">{{name}}</p>
                         {% comment %} кнопка менять тему {% endcomment %}
                         <a href="{% url 'update_theme' theme=theme_id %}" class="button_forum">Изменить</a>
-                        <a href="{% url 'update_theme' theme=theme_id %" class="button_forum">Удалить</a>
+                        <a href="{% url 'delete_theme' pk=theme_id %}" class="button_forum">Удалить</a>
                     </div>
                     <div class="forum_user_profile col-3 justify-content-end">
                         <div class="form_message_author px-"> {{theme_author}} </div>
@@ -63,21 +63,21 @@
                             {% comment %} аватарка и ник {% endcomment %}
                             <div class="forum_user_profile col-4 ms-4 mt-3 mb-3">
                                 <img src="{{post.author.avatar.url}}" style="border-radius: 5px 5px">
-                                <div class="form_message_author ps-4">{{ post.author.avatar.url }}</div>
+                                <div class="form_message_author ps-4">{{ post.author }}</div>
                             </div>
 
                             {% comment %} тема {% endcomment %}
                             <div class="d-flex justify-content-center my-3 col-7">
                                 <div class="">
-                                        <p class="font-weight-bold">СообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщениеСообщение
+                                        <p class="font-weight-bold">{{post.text}}
                                         </p>
 
                                 </div>
                             </div>
                         </div>
                 <div class="col-12 justify-content-end button_forum message_button p-4">
-                    <a href="" class="button_forum p-1">Изменить</a>
-                    <a href="" class="button_forum p-1">Удалить</a>
+                    <a href="{% url 'update_post' theme=theme_id pk=post.id %}" class="button_forum p-1">Изменить</a>
+                    <a href="{% url 'delete_post' theme=theme_id pk=post.id %}" class="button_forum p-1">Удалить</a>
                 </div>
             </div>
 
